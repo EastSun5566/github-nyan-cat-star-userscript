@@ -1,5 +1,5 @@
-# GitHub old feed
+# Github Nyan Cat Star UserScript
 
-> Simply use `github.com/dashboard-feed` to bring back the old GitHub feed
+> 🐱 A UserScript that makes GitHub make sense again
 
-[Install on Greasyfork](https://greasyfork.org/en/scripts/477955-github-old-feed)
+[Install on Greasyfork]()

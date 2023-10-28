@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         GitHub nyan cat star
+// @name         Github Nyan Cat Star
 // @namespace    https://github.com/EastSun5566
 // @version      0.0.1
-// @description  🐱 Make github star button become nyan cat
+// @description  A UserScript that makes GitHub make sense again
 // @author       Michael Wang
 // @license      MIT
 // @homepageURL  https://github.com/EastSun5566
