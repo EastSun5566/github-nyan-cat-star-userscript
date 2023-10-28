@@ -1,7 +1,7 @@
 {
   "name": "github-nyan-cat-star-userscript",
   "version": "0.0.2",
-  "description": "🐱 Make github star button become nyan cat",
+  "description": "🐱 A UserScript that makes GitHub make sense again",
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --fix --ignore-path .gitignore",

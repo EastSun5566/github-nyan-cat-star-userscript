@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Github Nyan Cat Star
 // @namespace    https://github.com/EastSun5566
-// @version      0.0.2
-// @description  A UserScript that makes GitHub make sense again
+// @version      0.0.7
+// @description  Makes GitHub make sense again
 // @author       Michael Wang
 // @license      MIT
 // @homepageURL  https://github.com/EastSun5566
@@ -16,7 +16,7 @@
 (function () {
   /** tweak from {@url https://github.com/Gowee/nyancat-svg} */
   const NYAN_CAT_SVG = `
-  <svg xmlns="http://www.w3.org/2000/svg" x="120" y="58.5" width="30" viewBox="0 0 34 21" preserveAspectRatio="xMinYMin meet">
+  <svg xmlns="http://www.w3.org/2000/svg" x="120" y="58.5" width="30" viewBox="0 0 34 21" preserveAspectRatio="xMinYMin meet" style="vertical-align: sub;">
     <!-- All cat-frames are adapted from https://github.com/iliana/html5nyancat . -->
     <style>
       .cat-frame {
@@ -485,21 +485,31 @@
     </g>
   </svg>
   `;
+  const svg = new DOMParser()
+    .parseFromString(NYAN_CAT_SVG, 'image/svg+xml')
+    .documentElement;
 
-  const svg = new DOMParser().parseFromString(NYAN_CAT_SVG, 'image/svg+xml').documentElement;
-  if (!svg) throw new Error('Failed to parse SVG');
-  svg.style.verticalAlign = 'sub';
+  const mountNyanCat = () => {
+    svg.style.filter = '';
+    /** @type {SVGElement[]} */
+    const starIcons = Array.from(document.querySelectorAll('.octicon-star'));
+    starIcons.forEach((icon) => {
+      icon.replaceWith(svg.cloneNode(true));
+    });
 
-  /** @type {SVGElement[]} */
-  const starIcons = Array.from(document.querySelectorAll('.octicon-star'));
-  starIcons.forEach((icon) => {
-    icon.replaceWith(svg.cloneNode(true));
+    svg.style.filter = 'sepia(100%) contrast(150%)';
+    /** @type {SVGElement[]} */
+    const starredIcons = Array.from(document.querySelectorAll('.octicon-star-fill'));
+    starredIcons.forEach((icon) => {
+      icon.replaceWith(svg.cloneNode(true));
+    });
+  };
+
+  const observer = new MutationObserver(mountNyanCat);
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
   });
 
-  svg.style.filter = 'sepia(100%) contrast(150%)';
-  /** @type {SVGElement[]} */
-  const starredIcons = Array.from(document.querySelectorAll('.octicon-star-fill'));
-  starredIcons.forEach((icon) => {
-    icon.replaceWith(svg.cloneNode(true));
-  });
+  mountNyanCat();
 }());
