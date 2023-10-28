@@ -1,6 +1,6 @@
 {
   "name": "github-nyan-cat-star-userscript",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "🐱 A UserScript that makes GitHub make sense again",
   "main": "index.js",
   "scripts": {
