@@ -1,0 +1,29 @@
+{
+  "name": "github-nyan-cat-star-userscript",
+  "version": "0.0.1",
+  "description": "🐱 Make github star button become nyan cat",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "release": "npx standard-version && git push --follow-tags"
+  },
+  "keywords": [
+    "userscript",
+    "gihtub",
+    "nyan-cat"
+  ],
+  "author": "Michael Wang 汪東陽 <michael19920327@gmial.com> (https://github.com/EastSun5566)",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "simple-git-hooks": "^2.9.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.js": "pnpm run lint"
+  }
+}
