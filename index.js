@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github Nyan Cat Star
 // @namespace    https://github.com/EastSun5566
-// @version      0.0.1
+// @version      0.0.2
 // @description  A UserScript that makes GitHub make sense again
 // @author       Michael Wang
 // @license      MIT
