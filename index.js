@@ -14,7 +14,7 @@
 // @ts-check
 
 (function () {
-  /** tweak from {@url https://github.com/Gowee/nyancat-svg} */
+  /** tweak from {@link https://github.com/Gowee/nyancat-svg} */
   const NYAN_CAT_SVG = `
   <svg xmlns="http://www.w3.org/2000/svg" x="120" y="58.5" width="30" viewBox="0 0 34 21" preserveAspectRatio="xMinYMin meet" style="vertical-align: sub;">
     <!-- All cat-frames are adapted from https://github.com/iliana/html5nyancat . -->
